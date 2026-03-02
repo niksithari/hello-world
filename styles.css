@@ -1,0 +1,99 @@
+:root {
+  color-scheme: light dark;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f4f8ff, #dce8ff);
+  color: #12213f;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+}
+
+.panel {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-right: 1px solid #c4d6ff;
+  overflow: auto;
+}
+
+.panel h1 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.controls {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+button {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+  background: #2457d6;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status {
+  padding: 0.65rem;
+  border-radius: 0.5rem;
+  background: #ecf2ff;
+  border: 1px solid #ccdfff;
+  margin-bottom: 0.75rem;
+}
+
+.results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.results li {
+  background: #f7f9ff;
+  border: 1px solid #dae4ff;
+  border-radius: 0.5rem;
+  padding: 0.65rem;
+}
+
+.map-wrap {
+  min-height: 100vh;
+}
+
+#map {
+  width: 100%;
+  height: 100vh;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 60vh;
+  }
+
+  .map-wrap,
+  #map {
+    min-height: 60vh;
+    height: 60vh;
+  }
+}
