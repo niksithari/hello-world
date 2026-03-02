@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Routing Planner</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel">
+        <h1>Weather Routing Planner</h1>
+        <p>
+          Click a start and destination point on the map to generate route options and compare
+          expected wind along each leg.
+        </p>
+
+        <div class="controls">
+          <label for="routeCount">Alternative routes</label>
+          <input id="routeCount" type="range" min="1" max="5" step="1" value="3" />
+          <span id="routeCountValue">3</span>
+
+          <button id="resetBtn" type="button">Reset points</button>
+          <button id="planBtn" type="button" disabled>Plan routes</button>
+        </div>
+
+        <div id="status" class="status">Choose start and end points.</div>
+        <ul id="results" class="results"></ul>
+      </section>
+
+      <section class="map-wrap">
+        <div id="map" aria-label="Weather routing map"></div>
+      </section>
+    </main>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
